@@ -1,0 +1,23 @@
+//
+//  PrefixHeader.pch
+//  VKNewsViewer
+//
+//  Created by Daniil Novoselov on 13.05.16.
+//  Copyright © 2016 Daniil Novoselov. All rights reserved.
+//
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+#import <SDWebImage/UIImageView+WebCache.h>
+#import <SDWebImage/SDImageCache.h>
+#import <AFNetworking/AFNetworking.h>
+#import <AFNetworking/UIKit+AFNetworking.h>
+#import <MagicalRecord/MagicalRecord.h>
+#import <SVProgressHUD/SVProgressHUD.h>
+
+#import "AppDelegate.h"
+#import "NetManager.h"
+
+#endif

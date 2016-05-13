@@ -4,7 +4,7 @@
 # use_frameworks!
 
 target 'VKNewsViewer' do
-pod 'AFNetworking'
+pod 'AFNetworking’, ‘~> 2.0’
 pod 'MagicalRecord'
 pod 'SVProgressHUD'
 pod 'SDWebImage'
@@ -17,4 +17,3 @@ end
 target 'VKNewsViewerUITests' do
 
 end
-
