@@ -5,6 +5,8 @@
 ## Build generated
 build/
 DerivedData
+.DS_Store
+VKNewsViewer.xcworkspace/xcuserdata/
 
 ## Various settings
 *.pbxuser
