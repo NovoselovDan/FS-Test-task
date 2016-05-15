@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4E002529663B466D6F2CC9AF /* libPods-VKNewsViewer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D11415D68D2387F7AE64229 /* libPods-VKNewsViewer.a */; };
 		E1558DDE1CE63C2A0025CFE5 /* NetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E1558DDD1CE63C2A0025CFE5 /* NetManager.m */; };
+		E1595CC21CE92225002D327B /* Classes in Resources */ = {isa = PBXBuildFile; fileRef = E1595CC11CE92225002D327B /* Classes */; };
 		E1C97C911CE3A09F009F87E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C97C901CE3A09F009F87E9 /* main.m */; };
 		E1C97C941CE3A09F009F87E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C97C931CE3A09F009F87E9 /* AppDelegate.m */; };
 		E1C97C971CE3A09F009F87E9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C97C961CE3A09F009F87E9 /* ViewController.m */; };
@@ -19,6 +20,30 @@
 		E1C97CAD1CE3A09F009F87E9 /* VKNewsViewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C97CAC1CE3A09F009F87E9 /* VKNewsViewerTests.m */; };
 		E1C97CB81CE3A09F009F87E9 /* VKNewsViewerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E1C97CB71CE3A09F009F87E9 /* VKNewsViewerUITests.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		E1595CC01CE8EE07002D327B /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = wrapper.xcdatamodel;
+			isEditable = 1;
+			name = "Data model files using Script";
+			outputFiles = (
+				"$(DERIVED_FILES_DIR)/$(INPUT_FILE_BASE).momd",
+			);
+			script = "echo \"Running mogend (Data model files)\"\n\"${PROJECT_DIR}/Scripts/mogend.sh";
+		};
+		E1C85AD91CE8ED8700212B52 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = wrapper.xcdatamodeld;
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILES_DIR)/$(INPUT_FILE_BASE).momd",
+			);
+			script = "echo \"Running mogend (Data model version files)\"\n\"${PROJECT_DIR}/Scripts/mogend.sh\"";
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXContainerItemProxy section */
 		E1C97CA91CE3A09F009F87E9 /* PBXContainerItemProxy */ = {
@@ -43,6 +68,7 @@
 		E1558DD81CE63AE10025CFE5 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		E1558DDC1CE63C2A0025CFE5 /* NetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetManager.h; sourceTree = "<group>"; };
 		E1558DDD1CE63C2A0025CFE5 /* NetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetManager.m; sourceTree = "<group>"; };
+		E1595CC11CE92225002D327B /* Classes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Classes; sourceTree = "<group>"; };
 		E1C97C8C1CE3A09F009F87E9 /* VKNewsViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKNewsViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1C97C901CE3A09F009F87E9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E1C97C921CE3A09F009F87E9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -109,6 +135,7 @@
 		E1558DD91CE63B3B0025CFE5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E1595CC11CE92225002D327B /* Classes */,
 				E1C97C9B1CE3A09F009F87E9 /* VKNewsViewer.xcdatamodeld */,
 			);
 			name = Models;
@@ -213,6 +240,8 @@
 				F9B460EC92ED791227422082 /* Copy Pods Resources */,
 			);
 			buildRules = (
+				E1C85AD91CE8ED8700212B52 /* PBXBuildRule */,
+				E1595CC01CE8EE07002D327B /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -305,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1C97CA21CE3A09F009F87E9 /* LaunchScreen.storyboard in Resources */,
+				E1595CC21CE92225002D327B /* Classes in Resources */,
 				E1C97C9F1CE3A09F009F87E9 /* Assets.xcassets in Resources */,
 				E1C97C9A1CE3A09F009F87E9 /* Main.storyboard in Resources */,
 			);

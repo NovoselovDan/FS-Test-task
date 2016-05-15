@@ -16,7 +16,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [[NSUserDefaults standardUserDefaults] setObject:@"7fc597339e90cce700da60262eda7bd1a80c90e657ac72f173d1e64e2c3cd50f80a49dc8198907b11e02a" forKey:@"access_token"];
+    [[NSUserDefaults standardUserDefaults] setObject:@"216060360" forKey:@"user_id"];
+    
+    [[NetManager sharedManager] getNewsItemsNext:NO andSuccess:^(NSArray *items) {
+        NSLog(@"net manager get news.. response:\n%@", items);
+    } failed:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"net manager get news... eror: $@", error);
+    }];
+    
     return YES;
 }
 
